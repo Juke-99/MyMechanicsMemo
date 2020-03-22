@@ -1,22 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
-import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import React, { Component } from "react";
 
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
 import Home from './Home';
 import GeneralisedCoordinates from './GeneralisedCoordinates';
+import { createAppContainer } from "react-navigation";
 
 const Stack = createStackNavigator()
 
-class App extends Component {
+class AppNavigator extends Component {
   constructor(props) {
     super(props)
   }
@@ -37,8 +29,4 @@ class App extends Component {
   }
 };
 
-const styles = StyleSheet.create({
-
-});
-
-export default App;
+export default AppNavigator

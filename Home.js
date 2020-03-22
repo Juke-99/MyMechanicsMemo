@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, FlatList, Text, Dimensions, StyleSheet } from "react-native";
 import GeneralisedCoordinates from "./GeneralisedCoordinates"
 import { NavigationActions } from "react-navigation";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const data = [
   {hOne: '運動方程式', 
@@ -77,8 +78,9 @@ class Home extends Component {
             <Text style={styles.flatListText}>{item.hOne}</Text>
             {
               item.hTwo ? item.hTwo.map((title, index) => (
-                <Text key={index} style={styles.flatListContentText}
-                  onPress={() => this.props.navigation.dispatch(NavigationActions.navigate('GeneralisedCoodinates'))}>{index + 1}. {title}</Text>
+                <TouchableOpacity key={index} style={styles.flatListContentText} onPress={() => this.props.navigation.navigate('GeneralisedCoodinates')}>
+                  <Text>{index + 1}. {title}</Text>
+                </TouchableOpacity>
               )) : <Text></Text>
             }
           </View>
